@@ -23,6 +23,6 @@ while mainloop:
             if event.key == pygame.K_ESCAPE:
                 mainloop = False
                 
-ballsurface = pygame.Surface((320,100))   
+  
 # draw blue filled circle on ball surface 
-pygame.draw.circle(ballsurface, (0,128,128), (25,25),25) 
+pygame.draw.circle(background, (0,128,128), (320,100),25) 
