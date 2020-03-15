@@ -4,12 +4,15 @@ screen = pygame.display.set_mode((640,200)) # Set screen size of pygame window
 background = pygame.Surface(screen.get_size())  # Create empty pygame surface
 background.fill((0,255,255))     # Fill the background white color (red,green,blue)
 background = background.convert()  # Convert Surface to make blitting faster
+pygame.draw.circle(background, (0,128,128), (320,100),25) 
 screen.blit(background, (0, 0))
+
 clock = pygame.time.Clock()
 mainloop = True
 FPS=60
 playtime=0.0
 while mainloop:
+    pygame.display.update()
     # Do not go faster than this framerate.
     milliseconds = clock.tick(FPS) 
     playtime += milliseconds / 1000.0 
@@ -22,7 +25,3 @@ while mainloop:
             # User presses ESCAPE-Key
             if event.key == pygame.K_ESCAPE:
                 mainloop = False
-                
-  
-# draw blue filled circle on ball surface 
-pygame.draw.circle(background, (0,128,128), (320,100),25) 
